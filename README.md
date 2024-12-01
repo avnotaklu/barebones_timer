@@ -11,29 +11,26 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This is a very barebones implementation of a timer.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- The timer ticks every `interval` duration and displays the `duration` as specified by the `builder` function.
+- Controller can be passed to control the timer.
+- The time can be paused using `pause` and resumed using `start`.
+- The time can be updated by passing a new `duration` to the `updateDuration` function.
+- Rest you can add on your own. The package is very simple and easy to build upon.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Just add the package to your pubspec.yaml file and import it.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
-```
+Usage examples are in the `/example` folder.
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+This package was built for usage in turn based games.
+There are no packages that do the time management properly while being very lightweight.
+So i made my own.
