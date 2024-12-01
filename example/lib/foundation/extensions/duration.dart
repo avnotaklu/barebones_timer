@@ -10,9 +10,10 @@ extension DurationExtension on Duration {
     var hours_s = hours > 0 ? "${hours}h" : "";
     var minutes_s = minutes > 0 ? "${minutes}m" : "";
     var seconds_s = seconds > 0 ? "${seconds}s" : "";
-    var milliseconds_s = milliseconds > 0 ? "${milliseconds}ms" : "";
+    var milliseconds_s =
+        milliseconds > 0 ? "${(milliseconds / 10).floor()}ms" : "";
 
-    final res = "$days_s$hours_s$minutes_s$seconds_s$milliseconds_s";
-    return res == "" ? "0s" : res;
+    final res = "$days_s $hours_s $minutes_s $seconds_s $milliseconds_s";
+    return res.trim() == "" ? "lost" : res;
   }
 }

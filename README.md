@@ -15,9 +15,12 @@ This is a very barebones implementation of a timer.
 
 ## Features
 
-- The timer ticks every `interval` duration and displays the `duration` as specified by the `builder` function.
+- The timer ticks every `updateInterval` duration and displays the `duration` as specified by the `builder` function.
 - Controller can be passed to control the timer.
 - The time can be paused using `pause` and resumed using `start`.
+- The timer finishes when the time reaches zero and reaches the `finished` state. It can be reset by calling `updateDuration` with a new duration and calling `start`.
+- The timer state can be obtained using the `state` property.
+- The timer state can be also be observed as it changes using the `stateStream` property.
 - The time can be updated by passing a new `duration` to the `updateDuration` function.
 - Rest you can add on your own. The package is very simple and easy to build upon.
 
