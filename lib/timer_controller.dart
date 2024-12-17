@@ -19,7 +19,7 @@ class TimerController extends ChangeNotifier {
   final StreamController<TimerState> _stateController;
   late final Stream<TimerState> stateStream;
 
-  late Timer _timer;
+  Timer? _timer;
 
   final Duration _updateInterval;
 
@@ -42,7 +42,7 @@ class TimerController extends ChangeNotifier {
     if (state == TimerState.paused) return;
     _updateState(TimerState.paused);
 
-    _timer.cancel();
+    _timer?.cancel();
   }
 
   void start() {
@@ -69,7 +69,7 @@ class TimerController extends ChangeNotifier {
     if (state == TimerState.finished) return;
     _updateState(TimerState.finished);
 
-    _timer.cancel();
+    _timer?.cancel();
   }
 
   void _updateState(TimerState state) {
@@ -81,7 +81,7 @@ class TimerController extends ChangeNotifier {
 
   @override
   void dispose() {
-    _timer.cancel();
+    _timer?.cancel();
     super.dispose();
   }
 }
